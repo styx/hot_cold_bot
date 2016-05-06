@@ -35,8 +35,8 @@ config :phoenix, :stacktrace_depth, 20
 # Configure your database
 config :hot_cold_bot, HotColdBot.Repo,
   adapter: Ecto.Adapters.Postgres,
-  username: "postgres",
-  password: "postgres",
+  username: System.get_env("POSTGRES_LOGIN"),
+  password: System.get_env("POSTGRES_PASSWORD"),
   database: "hot_cold_bot_dev",
   hostname: "localhost",
   pool_size: 10
